@@ -30,9 +30,9 @@ window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+   columns: 148
+   lines: 44
 
   # Window position (changes require restart)
   #
@@ -47,8 +47,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
-    y: 5
+    x: 12
+    y: 8
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -112,8 +112,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Cascadia Mono PL
-    # family: Hack
+    family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -177,7 +176,128 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+schemes:
+  # Colors (Night Owlish Light)
+  night-owlish-light: &night-owlish-light
+    bright:
+      black: '#7a8181'
+      blue: '#5ca7e4'
+      cyan: '#00c990'
+      green: '#49d0c5'
+      magenta: '#697098'
+      red: '#f76e6e'
+      white: '#989fb1'
+      yellow: '#dac26b'
+    cursor:
+      cursor: '#403f53'
+      text: '#fbfbfb'
+    normal:
+      black: '#011627'
+      blue: '#4876d6'
+      cyan: '#08916a'
+      green: '#2aa298'
+      magenta: '#403f53'
+      red: '#d3423e'
+      white: '#7a8181'
+      yellow: '#daaa01'
+    primary:
+      background: '#ffffff'
+      foreground: '#403f53'
+    selection:
+      background: '#f2f2f2'
+      text: '#403f53'
+
+  one-half-light: &one-half-light
+    primary:
+      background: '0xfafafa'
+      foreground: '0x383a42'
+
+    normal:
+      black: '0x383a42'
+      red: '0xe45649'
+      green: '0x50a14f'
+      yellow: '0xc18401'
+      blue: '0x0184bc'
+      magenta: '0xa626a4'
+      cyan: '0x0997b3'
+      white: '0xfafafa'
+
+    bright:
+      black: '0x383a42'
+      red: '0xe45649'
+      green: '0x50a14f'
+      yellow: '0xc18401'
+      blue: '0x0184bc'
+      magenta: '0xa626a4'
+      cyan: '0x0997b3'
+      white: '0xfafafa'
+
+  tokyo-night: &tokyo-night-day
+    # Default colors
+    primary:
+      background: '0xe1e2e7'
+      foreground: '0x3760bf'
+
+    # Normal colors
+    normal:
+      black:   '0xe9e9ed'
+      red:     '0xf52a65'
+      green:   '0x587539'
+      yellow:  '0x8c6c3e'
+      blue:    '0x2e7de9'
+      magenta: '0x9854f1'
+      cyan:    '0x007197'
+      white:   '0x6172b0'
+
+    # Bright colors
+    bright:
+      black:   '0xa1a6c5'
+      red:     '0xf52a65'
+      green:   '0x587539'
+      yellow:  '0x8c6c3e'
+      blue:    '0x2e7de9'
+      magenta: '0x9854f1'
+      cyan:    '0x007197'
+      white:   '0x3760bf'
+
+    indexed_colors:
+      - { index: 16, color: '0xb15c00' }
+      - { index: 17, color: '0xc64343' }
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
+
+    # Normal colors
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+
+    # Bright colors
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
+
 # Colors (Tomorrow Night)
+colors: *tokyo-night-storm
 #colors:
   # Default colors
   #primary:
@@ -404,7 +524,7 @@ font:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: "wsl.exe"
+  program: "fish"
 #  args:
 #    - --login
 
